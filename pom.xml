@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.shanjupay</groupId>
+    <artifactId>shanjupay</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>shanjupay-common</module>
+        <module>shanjupay-merchant-application</module>
+        <module>shanjupay-merchant</module>
+        <module>test-rocketmq</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.8.RELEASE</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <org.projectlombok.version>1.18.0</org.projectlombok.version>
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+    </properties>
+
+
+
+   <!-- <dependencies>
+    <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Hoxton.SR10</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>2.9.2</version>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>2.9.2</version>
+    </dependency>
+    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt &ndash;&gt;
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-jwt</artifactId>
+        <version>1.1.0.RELEASE</version>
+    </dependency>
+
+
+    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security.oauth.boot/spring-security-oauth2-autoconfigure &ndash;&gt;
+    <dependency>
+        <groupId>org.springframework.security.oauth.boot</groupId>
+        <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+        <version>2.6.2</version>
+    </dependency>
+
+
+
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${org.projectlombok.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>1.2.6</version>
+    </dependency>
+-->
+
+   <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <version>2.2.5.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>Hoxton.SR10</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <!--Swagger2的组合包-->
+       <!-- <dependency>
+            <groupId>cn.weiguangfu</groupId>
+            <artifactId>springfox-swagger2-plus</artifactId>
+            <version>2.8.0-1-beta2</version>
+        </dependency>-->
+         <!--https://mvnrepository.com/artifact/io.springfox/springfox-swagger2-->
+        <dependency><!--通过扫描代码提取代码中的信息，生成API文档的工具-->
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.10.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency><!--用于Restful API开发的工具，用于展示API规范-->
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.10.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt -->
+        <dependency><!--实现前后端分离时的登录,解决一个认证授权功能-->
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+            <version>1.0.10.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth.boot/spring-security-oauth2-autoconfigure -->
+        <dependency><!--授权服务器，-->
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+            <version>2.5.5</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+        </dependency>
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter &ndash;&gt;-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.9</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+
+        <dependency><!--mybatis类型处理器JSR310标准-->
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-typehandlers-jsr310</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency><!--工具包-->
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+
+
+        <dependency><!--用于对象转换为另外一个对象的java工具类-->
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency><!--谷歌开发的工具类包，取代commons-->
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency><!--主要用于序列化json字符串-->
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency><!--Java语言编写的高性能的JSON处理器,-->
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.79</version>
+        </dependency>
+
+        <dependency><!--Sharding-jdbc是开源的数据库操作中间件-->
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+        <dependency><!--可访支付宝开放平台开放的各项能力-->
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.23.0.ALL</version>
+        </dependency>
+
+
+        <dependency><!--微信支付 Java SDK-->
+            <groupId>com.github.tedzhdz</groupId>
+            <artifactId>wxpay-sdk</artifactId>
+            <version>3.0.10</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.binarywang/weixin-java-pay -->
+        <dependency><!--微信支付SDK(软件开发工具包)-->
+            <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-pay</artifactId>
+            <version>4.3.2.B</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.qiniu/qiniu-java-sdk -->
+        <dependency><!--七牛云服务-->
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.10.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency><!--网络请求框架-->
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.6.7</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!--<plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
+            </plugin>-->
+        </plugins>
+    </build>
+
+</project>
